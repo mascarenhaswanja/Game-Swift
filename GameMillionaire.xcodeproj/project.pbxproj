@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2274CE5025F6526800456D29 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274CE4F25F6526800456D29 /* main.swift */; };
+		22E5AF8425FA424C00F0F1D8 /* BankofQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5AF8325FA424C00F0F1D8 /* BankofQuestions.swift */; };
+		22E5AF8625FA43CA00F0F1D8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5AF8525FA43CA00F0F1D8 /* Player.swift */; };
+		22E5AF8825FA449900F0F1D8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5AF8725FA449900F0F1D8 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		2274CE4C25F6526800456D29 /* GameMillionaire */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameMillionaire; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274CE4F25F6526800456D29 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		22E5AF8325FA424C00F0F1D8 /* BankofQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankofQuestions.swift; sourceTree = "<group>"; };
+		22E5AF8525FA43CA00F0F1D8 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		22E5AF8725FA449900F0F1D8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				2274CE4F25F6526800456D29 /* main.swift */,
+				22E5AF8325FA424C00F0F1D8 /* BankofQuestions.swift */,
+				22E5AF8525FA43CA00F0F1D8 /* Player.swift */,
+				22E5AF8725FA449900F0F1D8 /* Game.swift */,
 			);
 			path = GameMillionaire;
 			sourceTree = "<group>";
@@ -119,7 +128,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E5AF8425FA424C00F0F1D8 /* BankofQuestions.swift in Sources */,
+				22E5AF8625FA43CA00F0F1D8 /* Player.swift in Sources */,
 				2274CE5025F6526800456D29 /* main.swift in Sources */,
+				22E5AF8825FA449900F0F1D8 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
