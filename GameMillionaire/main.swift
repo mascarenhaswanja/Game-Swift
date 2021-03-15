@@ -8,47 +8,42 @@
 
 import Foundation
 
-//*****  WELCOME
+//@TODO Implement inheritence ?
+// Protocol and Extension
 
-var input: String?
-var player = welcome()
-// print(player.currentQuestion, player.totalWin,  player.hint1, player.hint2, player.round)
+import Foundation
 
-//*****  GAME   ******
-
-repeat {
-    print("\nYou're in ROUND: \(player.round) QUESTION: \(player.currentQuestion) REMAIN QUESTIONS: \(9-player.currentQuestion) EARNED $:\(player.totalWin)")
-    // Select a Question
-    let selected = selectQuestion(round: player.round, questionNumber: player.currentQuestion)
+func welcomeGame() -> Player {
+    print("*****************************************")
+    print("****          WELCOME TO PLAY        ****")
+    print("****   WHO WANTS TO BE A MILIONAIRE  ****")
+    print("****       You have 3 Rounds         ****")
+    print("****   Each round has 3 questions    ****")
+    print("**** Round 3 allows stop in question ****")
+    print("*****************************************")
     
-    // Choose Option
-    let option = chooseOption()
-    
-    // Confirm Option
-    let confirm = confirmOption(option: option)
-    
-    // Win or loose
-    resultWin = looseOrWin(option:confirm, selected: selected)
-    
-    // @TODOd
-    //  Verify at the end round 1 and 2 defineContinue()
-    if resultWin {
-        player.totalWin = amountWinning[player.currentQuestion - 1]
-        // print("\nYou're in ROUND: \(player.round) QUESTION: \(player.currentQuestion) REMAIN QUESTIONS: \(9-player.currentQuestion) EARNED $:\(player.totalWin)")
-        if player.currentQuestion == 3 ||  player.currentQuestion == 6 {
-            defContinue = defineContinue()
-        } else if player.round == 3 && player.currentQuestion < 9{
-            defContinue = defineContinue()
+    var input: String?
+    var invalidName: Bool = true
+    var result: String = "No Name"
+    while (invalidName) {
+        print("What's your name?")
+        input = readLine()
+        guard let unwrapped = input else {
+            print("You didn't provide a name.")
+            continue
         }
-        player.currentQuestion += 1
+        invalidName.toggle()
+        //invalidName = false
+        result = unwrapped.uppercased()
     }
-    // @TODO questionNumber final is 9
-} while resultWin && defContinue && player.currentQuestion <= 9
-
-if resultWin {
-    if player.currentQuestion > 9 {
-        print("\n\nCONGRATULATIONS!!! You're a millionaire. You earned $ \(player.totalWin)")
-    } else {
-        print("\n\nYou earned $ \(player.totalWin)")
-    }
+    let player = Player(name: result)
+    print("Hello, \(result)")
+    return player
 }
+
+var player = welcomeGame()
+
+let questions = BankOfQuestions()
+
+var game = Game(player: player, questions: questions)
+game.playGame()

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Player {
-    let name: String
+    var name: String?
     var totalWin: Int = 0
     var currentQuestion: Int = 1
     var hint1: Bool = false
@@ -32,4 +32,7 @@ struct Player {
     init(name:String) {
         self.name = name
     }
+    
+    
+    
 }
