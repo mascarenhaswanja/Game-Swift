@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AnswerChoices: Int  {
+enum AnswerChoices: Int {
     case a = 0
     case b = 1
     case c = 2
@@ -18,3 +18,5 @@ enum AnswerChoices: Int  {
         return "\(self)"
     }
 }
+
+

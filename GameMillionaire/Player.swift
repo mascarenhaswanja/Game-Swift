@@ -8,31 +8,41 @@
 
 import Foundation
 
-struct Player {
+class Player {
     var name: String?
-    var totalWin: Int = 0
-    var currentQuestion: Int = 1
-    var hint1: Bool = false
-    var hint2: Bool = false
     
-    // computed property
-    var round: Int {
-        get {
-            if currentQuestion <= 3 {
-                return 1
-            } else if currentQuestion <= 6 {
-                return 2
-            } else {
-                return 3
+    //  If define Player as struct use: mutating func welcomeGame() {
+    
+    func welcomeGame() {
+        print("******************************************************************")
+        print("****                        WELCOME TO PLAY                   ****")
+        print("****                 WHO WANTS TO BE A MILIONAIRE             ****")
+        print("******************************************************************")
+        print("****    You have 3 Rounds (Easy, Medium and High Difficult    ****")
+        print("****              Each round has 3 questions                  ****")
+        print("**** Round 1 and 2 you can use hints: 50/50 or Ask Audience   ****")
+        print("****              Round 3 allows stop in each question        ****")
+        print("******************************************************************")
+        
+        var input: String?
+        var invalidName: Bool = true
+        var result: String = "No Name"
+        while (invalidName) {
+            print("What's your name?")
+            input = readLine()
+            guard let unwrapped = input else {
+                print("You didn't provide a name.")
+                continue
             }
+            invalidName.toggle()
+            //invalidName = false
+            result = unwrapped
         }
+        self.name = result
+        print("Hello, \(result.uppercased())")
     }
-    
-    // Constructor
-    init(name:String) {
-        self.name = name
+    // @TODO use enum
+    func moneyGame( ) {
+        
     }
-    
-    
-    
 }

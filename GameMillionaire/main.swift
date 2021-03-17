@@ -8,42 +8,51 @@
 
 import Foundation
 
-//@TODO Implement inheritence ?
-// Protocol and Extension
+//@TODO Implement inheritence ? Hints
+// Protocol and Extension-OK
 
 import Foundation
 
-func welcomeGame() -> Player {
-    print("*****************************************")
-    print("****          WELCOME TO PLAY        ****")
-    print("****   WHO WANTS TO BE A MILIONAIRE  ****")
-    print("****       You have 3 Rounds         ****")
-    print("****   Each round has 3 questions    ****")
-    print("**** Round 3 allows stop in question ****")
-    print("*****************************************")
-    
-    var input: String?
-    var invalidName: Bool = true
-    var result: String = "No Name"
-    while (invalidName) {
-        print("What's your name?")
-        input = readLine()
-        guard let unwrapped = input else {
-            print("You didn't provide a name.")
-            continue
-        }
-        invalidName.toggle()
-        //invalidName = false
-        result = unwrapped.uppercased()
-    }
-    let player = Player(name: result)
-    print("Hello, \(result)")
-    return player
-}
+var player = Player()
+player.welcomeGame()
 
-var player = welcomeGame()
-
-let questions = BankOfQuestions()
-
-var game = Game(player: player, questions: questions)
+let game = Game(player: player)
 game.playGame()
+
+/*  This project is unisng XCode 9.4 (some funcionalities are not available)
+ 
+ GAME DESIGN
+ Game has-a:
+    Player
+    Hint
+    BankOfQuestions
+ 
+ BankOfQuestions has-a:
+    Question
+ 
+ Class:
+    Game
+    Player
+    Hint
+ 
+ Structs:
+    Question
+    BankofQuestion
+ 
+ Inheritance:
+    Hint - superclass
+        Hint1 - subclass
+        Hint2 - subclass
+ 
+ Protocol:
+    Printable - print special situations with Hint
+ 
+ Extensions:
+    Int -  random from arc4random
+    Bool - toggle self = !self
+ 
+ Enum:
+    AnswerChoices: a,b,c,d
+    WinningMoney per question and round
+ */
+ 

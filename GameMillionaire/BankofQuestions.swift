@@ -12,11 +12,10 @@ import Foundation
 struct BankOfQuestions {
     var bankOfQuestions: [Question] {
         get{
-            
             return([
                 Question(level:1, question:"What insect shorted out an early supercomputer and inspired the term: computer bug?", options:["Roach", "Fly", "Japanese beetle", "Moth"],correctAnswer: .d),
                 
-                Question( level:1,question:"In the U.S., the Sony Walkman personal cassette player was originally marketed in 1979 under what name?", options:["Soundabout", "Listener", "Eardrummer", "Stowaway"], correctAnswer: .a),
+                Question(level:1,question:"In the U.S., the Sony Walkman personal cassette player was originally marketed in 1979 under what name?", options:["Soundabout", "Listener", "Eardrummer", "Stowaway"], correctAnswer: .a),
                 
                 Question(level:1, question: "Famous pediatrician and author Dr. Benjamin Spock won an Olympic gold medal in what sport?", options:["Swimming", "Rowing", "Fencing", "Sailing"],correctAnswer: .b),
                 
@@ -46,6 +45,7 @@ struct BankOfQuestions {
         }
     }
     
+    //@TODO select quetion only once
     func gameQuestions() -> [Question] {
         var randomQuestions: [Question] = []
         for l in 1...3 {  // levels
@@ -53,7 +53,6 @@ struct BankOfQuestions {
             for _ in 1...3 {    // 3 questions in each level
                 // Use Extension to generate random Int
                 // let ind = Int.random(in: 0..<select.count)
-                // randomQuestions.append(select[ind])
                 
                 //  random in Swift 9.4 - arc4random.  Create a Extension to generate random: Int.random
                 //  Int(arc4random_uniform(UInt32(n)))
