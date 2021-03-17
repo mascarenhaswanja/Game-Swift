@@ -10,8 +10,6 @@ import Foundation
 class Game {
     var player: Player
     let questions: BankOfQuestions = BankOfQuestions()
-    //    var hint1: Hint1
-    //    var hint2: Hint2
     var hints: [Hint] = []
     var totalWin: Int = 0
     var currentQuestion: Int = 1
@@ -28,11 +26,10 @@ class Game {
             }
         }
     }
-    
-    init(player: Player) {
+
+    init (player: Player) {
         self.player = player
     }
-    
     
     func playGame() {
         //  Select Random Questions for Game
@@ -43,9 +40,6 @@ class Game {
         let h2: Hint2 = Hint2()
         hints.append(h1)
         hints.append(h2)
-        // ERASE
-        // print(game.hints[0].usedHint)
-        // print(h1.usedHint)
         
         // Control the Game
         var resultWin = false
@@ -53,8 +47,8 @@ class Game {
         var option: String
         
         repeat {
-            print("\nYou're in ROUND: \(round) QUESTION: \(currentQuestion) REMAIN QUESTIONS: \(9 - currentQuestion)")
-            print("TOTAL EARNED UNTIL NOW $:\(totalWin)")
+            print("\nYou're in ROUND: \(round) \n QUESTION: \(currentQuestion) REMAIN QUESTIONS: \(9 - currentQuestion)")
+            print(" TOTAL EARNED UNTIL NOW $:\(totalWin)")
             
             // Select and Show Question
             let questionSelected = selectedQuestions[currentQuestion-1]
@@ -62,19 +56,13 @@ class Game {
             
             // Want an Hint
             if round <= 2 && (!h1.usedHint || !h2.usedHint)  {
-                print("Test hint")
-                
-                // ask audience - option
-                // 50 - define option
                 let want:Bool = wantHint()
                 if want {
-                    // h1.usedHint = true
                     let hintNumber = chooseHint(h:hints)
-                    print(hintNumber)
+                    
                     if hintNumber == 1 {
                         let result50 = h1.responseHint(question: questionSelected)
                         showHint(number: currentQuestion, selected: questionSelected, op: result50)
-                        //option = result50[0]
                         var confirm = false
                         repeat {
                             // Choose Option
@@ -86,6 +74,7 @@ class Game {
                     } else {
                         let audience = h2.responseHint(question: questionSelected)
                         option = audience[0]
+                        print("Audience Choose Option \(option)")
                         h2.usedHint = true
                     }
                 } else {  //  NO HINT
@@ -133,37 +122,30 @@ class Game {
                 print("\n\nYou earned $ \(totalWin)")
             }
         }
-        
     }
-    
-    // func showQuestion(number: Int, selected: Question)  {
-    //     print("\nQuestion \(number) - \(selected.question)")
-    //     print("(A) \(selected.options[0])")
-    //     print("(B) \(selected.options[1])")
-    //     print("(C) \(selected.options[2])")
-    //     print("(D) \(selected.options[3])")
-    // }
+
     func showQuestion(number: Int, selected: Question, op:[String])  {
-        
         print("\nQuestion \(number) - \(selected.question)")
-        
-        let letters = ["A", "B", "C", "D"]
+        let letters = ["a", "b", "c", "d"]
         for i in 0...3 {
-            print("\(letters[i]) - \(selected.options[i])")
+            print("\(letters[i].uppercased()) - \(selected.options[i])")
         }
     }
     
     func showHint(number: Int, selected: Question, op: [String]) {
         print("\nQuestion \(number) - \(selected.question)")
-        print(op[0], op[1])
         var sortOp = op
         sortOp.sort()
-        let letters = ["A", "B", "C", "D"]
-        let index1 = letters.firstIndex(of: sortOp[0].uppercased) ?? 0
-        let index2 = letters.firstIndex(of: sortOp[1].uppercased) ?? 0
+        let letters = ["a", "b", "c", "d"]
         
-        print("\(letters[index1]) - \(selected.options[index1])")
-        print("\(letters[index2]) - \(selected.options[index2])")
+//      Version 9.4 - firstIndex(where:  )  doesn't work
+//          let index1 = letters.firstIndex(where: sortOp[0].uppercased()) ?? 0
+//          let index2 = letters.firstIndex(where: sortOp[1].uppercased()) ?? 0
+        
+        let index1 = letters.index(of: sortOp[0]) ?? letters.endIndex
+        let index2 = letters.index(of: sortOp[1]) ?? letters.endIndex
+        print("\(letters[index1].uppercased()) - \(selected.options[index1])")
+        print("\(letters[index2].uppercased()) - \(selected.options[index2])")
     }
     
     func chooseOption() -> String {
@@ -171,13 +153,13 @@ class Game {
         var invalidOption: Bool = true
         var option: String = ""
         while (invalidOption) {
-            print("\nWhat is your option (A, B, C, D, E) ?")
+            print("\nWhat is your option (A, B, C, D) ?")
             input = readLine()
             guard let op = input else {
                 print ("You didn't provide option.")
                 continue
             }
-            if op.uppercased() == "A" || op.uppercased() == "B" || op.uppercased() == "C" || op.uppercased() == "D"  || op.uppercased() == "E" {
+            if op.uppercased() == "A" || op.uppercased() == "B" || op.uppercased() == "C" || op.uppercased() == "D"  {
                 invalidOption.toggle()
                 //invalidOption = false
             } else {
@@ -229,7 +211,6 @@ class Game {
                 print ("You didn't provide option.")
                 continue
             }
-            //////
             if op.uppercased() == opHint[0].uppercased() || op.uppercased() ==  opHint[1].uppercased() {
                 invalidOption.toggle()
                 //invalidOption = false
@@ -240,12 +221,11 @@ class Game {
         }
         return option
     }
-    //  MAYBE NOT
+    
     func confirmOptionHint(option: String) -> Bool {
         var input: String?
         var result = false
         var invalidOption: Bool = true
-        
         while (invalidOption) {
             print("Confirm your option (Y-Yes N-No), you choose \(option.uppercased())")
             input = readLine()
@@ -274,13 +254,12 @@ class Game {
     func looseOrWin(option: String, selected: Question) -> Bool {
         let index = selected.correctAnswer.rawValue
         let correct = selected.correctAnswer
-        
         if (option == correct.choice()) {
             print("\nYour answer is correct.")
             return true
         } else {
-            print("Correct Answer is \(selected.options[index])")
-            print("You lost. You'll win $ \(totalWin)")
+            print("\nCORRECT ANSWER IS \(selected.options[index])")
+            print("Wrong Answer. YOU'LL WIN $ \(totalWin)")
             return false
         }
     }
@@ -289,7 +268,6 @@ class Game {
         var input: String?
         var invalidOption: Bool = true
         var cont: Bool = true
-        
         while (invalidOption) {
             print("\nDo you want to continue in the Game   (Y-Yes or N-No) ?")
             input = readLine()
@@ -342,7 +320,6 @@ class Game {
         var optionHint: Int = 0
         var input: String?
         var invalidOption: Bool = true
-        
         print("\nWhat is your Hint?")
         //for item in hints   {
         for item in hints {
@@ -351,7 +328,6 @@ class Game {
             }
         }
         while (invalidOption) {
-            
             input = readLine()
             guard let op = input else {
                 print ("You didn't provide option.")
@@ -359,11 +335,9 @@ class Game {
             }
             optionHint = Int(op)!
             if optionHint == 1  && !(hints[0].usedHint) {
-                print("chooseHint1")
                 invalidOption.toggle()
             } else {
                 if optionHint == 2  && !(hints[1].usedHint) {
-                    print("chooseHint2")
                     invalidOption.toggle()
                     //invalidOption = false
                 } else {

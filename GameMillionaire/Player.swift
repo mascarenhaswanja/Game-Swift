@@ -2,7 +2,7 @@
 //  Player.swift
 //  GameMillionaire
 //
-//  Created by Wanja on 2021-03-11.
+//  Created by Muzammil on 2021-03-11.
 //  Copyright © 2021 Wanja. All rights reserved.
 //
 
@@ -11,7 +11,6 @@ import Foundation
 class Player {
     var name: String?
     
-    //  If define Player as struct use: mutating func welcomeGame() {
     
     func welcomeGame() {
         print("******************************************************************")

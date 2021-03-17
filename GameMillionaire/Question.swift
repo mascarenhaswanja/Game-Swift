@@ -2,7 +2,7 @@
 //  Question.swift
 //  GameMillionaire
 //
-//  Created by Wanja on 2021-03-08.
+//  Created by Muzammil on 2021-03-08.
 //  Copyright © 2021 Wanja. All rights reserved.
 //
 

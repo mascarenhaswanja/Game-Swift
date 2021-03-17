@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		221199BE26011A1D005515DF /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221199BD26011A1D005515DF /* Hint.swift */; };
-		221199C026011AB7005515DF /* Hint1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221199BF26011AB7005515DF /* Hint1.swift */; };
-		221199C226011BA5005515DF /* Hint2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221199C126011BA5005515DF /* Hint2.swift */; };
-		221199C426014840005515DF /* Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221199C326014840005515DF /* Printable.swift */; };
-		2220E5CF25FF7C8700AA965A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220E5CE25FF7C8700AA965A /* Question.swift */; };
-		2220E5D125FF7CEC00AA965A /* AnswerChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220E5D025FF7CEC00AA965A /* AnswerChoices.swift */; };
-		2220E5D325FF7D7400AA965A /* Winning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220E5D225FF7D7400AA965A /* Winning.swift */; };
-		2220E5D525FF828D00AA965A /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220E5D425FF828D00AA965A /* Int.swift */; };
 		2274CE5025F6526800456D29 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274CE4F25F6526800456D29 /* main.swift */; };
-		22E5AF8425FA424C00F0F1D8 /* BankofQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5AF8325FA424C00F0F1D8 /* BankofQuestions.swift */; };
-		22E5AF8625FA43CA00F0F1D8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5AF8525FA43CA00F0F1D8 /* Player.swift */; };
-		22E5AF8825FA449900F0F1D8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E5AF8725FA449900F0F1D8 /* Game.swift */; };
-		22F8B17725FF95BF00EE61D1 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8B17625FF95BF00EE61D1 /* Bool.swift */; };
+		22C3588E2602AA4C00583D52 /* Hint1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C358852602AA4900583D52 /* Hint1.swift */; };
+		22C3588F2602AA4C00583D52 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C358862602AA4900583D52 /* Player.swift */; };
+		22C358902602AA4C00583D52 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C358872602AA4900583D52 /* Question.swift */; };
+		22C358912602AA4C00583D52 /* Winning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C358882602AA4A00583D52 /* Winning.swift */; };
+		22C358922602AA4C00583D52 /* AnswerChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C358892602AA4A00583D52 /* AnswerChoices.swift */; };
+		22C358932602AA4C00583D52 /* BankofQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3588A2602AA4B00583D52 /* BankofQuestions.swift */; };
+		22C358942602AA4C00583D52 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3588B2602AA4B00583D52 /* Game.swift */; };
+		22C358952602AA4C00583D52 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3588C2602AA4B00583D52 /* Hint.swift */; };
+		22C358962602AA4C00583D52 /* Hint2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3588D2602AA4C00583D52 /* Hint2.swift */; };
+		22C3589C2602AA5600583D52 /* Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3589B2602AA5600583D52 /* Printable.swift */; };
+		22C3589F2602AB8B00583D52 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3589D2602AB8A00583D52 /* Int.swift */; };
+		22C358A02602AB8B00583D52 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C3589E2602AB8A00583D52 /* Bool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,20 +35,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		221199BD26011A1D005515DF /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
-		221199BF26011AB7005515DF /* Hint1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint1.swift; sourceTree = "<group>"; };
-		221199C126011BA5005515DF /* Hint2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint2.swift; sourceTree = "<group>"; };
-		221199C326014840005515DF /* Printable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printable.swift; sourceTree = "<group>"; };
-		2220E5CE25FF7C8700AA965A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		2220E5D025FF7CEC00AA965A /* AnswerChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChoices.swift; sourceTree = "<group>"; };
-		2220E5D225FF7D7400AA965A /* Winning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winning.swift; sourceTree = "<group>"; };
-		2220E5D425FF828D00AA965A /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		2274CE4C25F6526800456D29 /* GameMillionaire */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameMillionaire; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274CE4F25F6526800456D29 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		22E5AF8325FA424C00F0F1D8 /* BankofQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankofQuestions.swift; sourceTree = "<group>"; };
-		22E5AF8525FA43CA00F0F1D8 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		22E5AF8725FA449900F0F1D8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		22F8B17625FF95BF00EE61D1 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		22C358822602A8BB00583D52 /* protocols */ = {isa = PBXFileReference; lastKnownFileType = folder; path = protocols; sourceTree = "<group>"; };
+		22C358832602A8FB00583D52 /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = models; sourceTree = "<group>"; };
+		22C358842602A94100583D52 /* extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = extensions; sourceTree = "<group>"; };
+		22C358852602AA4900583D52 /* Hint1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint1.swift; sourceTree = "<group>"; };
+		22C358862602AA4900583D52 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		22C358872602AA4900583D52 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		22C358882602AA4A00583D52 /* Winning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winning.swift; sourceTree = "<group>"; };
+		22C358892602AA4A00583D52 /* AnswerChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChoices.swift; sourceTree = "<group>"; };
+		22C3588A2602AA4B00583D52 /* BankofQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankofQuestions.swift; sourceTree = "<group>"; };
+		22C3588B2602AA4B00583D52 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		22C3588C2602AA4B00583D52 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
+		22C3588D2602AA4C00583D52 /* Hint2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint2.swift; sourceTree = "<group>"; };
+		22C3589B2602AA5600583D52 /* Printable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printable.swift; sourceTree = "<group>"; };
+		22C3589D2602AB8A00583D52 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		22C3589E2602AB8A00583D52 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,9 @@
 		2274CE4325F6526800456D29 = {
 			isa = PBXGroup;
 			children = (
+				22C358842602A94100583D52 /* extensions */,
+				22C358832602A8FB00583D52 /* models */,
+				22C358822602A8BB00583D52 /* protocols */,
 				2274CE4E25F6526800456D29 /* GameMillionaire */,
 				2274CE4D25F6526800456D29 /* Products */,
 			);
@@ -81,19 +87,19 @@
 		2274CE4E25F6526800456D29 /* GameMillionaire */ = {
 			isa = PBXGroup;
 			children = (
+				22C358892602AA4A00583D52 /* AnswerChoices.swift */,
+				22C3588A2602AA4B00583D52 /* BankofQuestions.swift */,
+				22C3588B2602AA4B00583D52 /* Game.swift */,
+				22C3588C2602AA4B00583D52 /* Hint.swift */,
+				22C3589E2602AB8A00583D52 /* Bool.swift */,
+				22C3589D2602AB8A00583D52 /* Int.swift */,
+				22C358852602AA4900583D52 /* Hint1.swift */,
+				22C3588D2602AA4C00583D52 /* Hint2.swift */,
+				22C358862602AA4900583D52 /* Player.swift */,
+				22C358872602AA4900583D52 /* Question.swift */,
+				22C3589B2602AA5600583D52 /* Printable.swift */,
+				22C358882602AA4A00583D52 /* Winning.swift */,
 				2274CE4F25F6526800456D29 /* main.swift */,
-				22E5AF8325FA424C00F0F1D8 /* BankofQuestions.swift */,
-				22E5AF8525FA43CA00F0F1D8 /* Player.swift */,
-				22E5AF8725FA449900F0F1D8 /* Game.swift */,
-				2220E5CE25FF7C8700AA965A /* Question.swift */,
-				2220E5D025FF7CEC00AA965A /* AnswerChoices.swift */,
-				2220E5D225FF7D7400AA965A /* Winning.swift */,
-				221199BF26011AB7005515DF /* Hint1.swift */,
-				2220E5D425FF828D00AA965A /* Int.swift */,
-				22F8B17625FF95BF00EE61D1 /* Bool.swift */,
-				221199BD26011A1D005515DF /* Hint.swift */,
-				221199C126011BA5005515DF /* Hint2.swift */,
-				221199C326014840005515DF /* Printable.swift */,
 			);
 			path = GameMillionaire;
 			sourceTree = "<group>";
@@ -155,19 +161,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221199BE26011A1D005515DF /* Hint.swift in Sources */,
-				2220E5CF25FF7C8700AA965A /* Question.swift in Sources */,
-				22E5AF8425FA424C00F0F1D8 /* BankofQuestions.swift in Sources */,
-				221199C226011BA5005515DF /* Hint2.swift in Sources */,
-				2220E5D125FF7CEC00AA965A /* AnswerChoices.swift in Sources */,
-				22E5AF8625FA43CA00F0F1D8 /* Player.swift in Sources */,
+				22C3588E2602AA4C00583D52 /* Hint1.swift in Sources */,
+				22C358962602AA4C00583D52 /* Hint2.swift in Sources */,
+				22C358A02602AB8B00583D52 /* Bool.swift in Sources */,
+				22C358932602AA4C00583D52 /* BankofQuestions.swift in Sources */,
+				22C3589F2602AB8B00583D52 /* Int.swift in Sources */,
+				22C358902602AA4C00583D52 /* Question.swift in Sources */,
+				22C358922602AA4C00583D52 /* AnswerChoices.swift in Sources */,
+				22C3588F2602AA4C00583D52 /* Player.swift in Sources */,
+				22C3589C2602AA5600583D52 /* Printable.swift in Sources */,
+				22C358912602AA4C00583D52 /* Winning.swift in Sources */,
+				22C358952602AA4C00583D52 /* Hint.swift in Sources */,
 				2274CE5025F6526800456D29 /* main.swift in Sources */,
-				22F8B17725FF95BF00EE61D1 /* Bool.swift in Sources */,
-				221199C426014840005515DF /* Printable.swift in Sources */,
-				2220E5D325FF7D7400AA965A /* Winning.swift in Sources */,
-				221199C026011AB7005515DF /* Hint1.swift in Sources */,
-				22E5AF8825FA449900F0F1D8 /* Game.swift in Sources */,
-				2220E5D525FF828D00AA965A /* Int.swift in Sources */,
+				22C358942602AA4C00583D52 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

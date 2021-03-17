@@ -29,6 +29,7 @@ class Hint2: Hint {
                  randomAnswer = Int.random(n: 3)
                  //randomAnswer = Int.random(in: 0..<3)
             } while (randomAnswer == optionCorrect)
+            
             switch randomAnswer {
             case 0:
                 return ["a"]
@@ -44,7 +45,6 @@ class Hint2: Hint {
         }
     }
 
-    
     public override func printOptions() {
         print("(2): \(description)")
         //super.printOptions()

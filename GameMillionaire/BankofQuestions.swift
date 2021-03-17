@@ -2,7 +2,7 @@
 //  BankofQuestions.swift
 //  GameMillionaire
 //
-//  Created by Wanja on 2021-03-11.
+//  Created by Muzammil on 2021-03-11.
 //  Copyright © 2021 Wanja. All rights reserved.
 //
 
@@ -44,18 +44,13 @@ struct BankOfQuestions {
                 Question(level:3, question:"When scientists tested it with an electroencephalogram, which of these food items produced readings similar to a human brain?", options:["Wint-O-Green Life Saver", "SPAM", "Lime Jell-O", "Jet-Puffed Marshmallow"], correctAnswer: .c) ])
         }
     }
-    
-    //@TODO select quetion only once
+
     func gameQuestions() -> [Question] {
         var randomQuestions: [Question] = []
         for l in 1...3 {  // levels
             let select = bankOfQuestions.filter({$0.level == l})
             for _ in 1...3 {    // 3 questions in each level
-                // Use Extension to generate random Int
-                // let ind = Int.random(in: 0..<select.count)
-                
-                //  random in Swift 9.4 - arc4random.  Create a Extension to generate random: Int.random
-                //  Int(arc4random_uniform(UInt32(n)))
+
                 let ind = Int.random(n: select.count)
                 randomQuestions.append(select[ind])
             }
