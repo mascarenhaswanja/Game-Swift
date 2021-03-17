@@ -5,7 +5,6 @@
 //  Created by Wanja on 2021-03-16.
 //  Copyright © 2021 Wanja. All rights reserved.
 //
-
 import Foundation
 
 class Hint : Printable {
@@ -15,7 +14,7 @@ class Hint : Printable {
     public init() {}
     
     // polymorphic method
-    public func responseHint(question: Question) -> [Int] {
+    public func responseHint(question: Question) -> [String] {
         return []
     }
     
@@ -23,5 +22,5 @@ class Hint : Printable {
     public func printOptions() {
         print("Hint superclass")
     }
-        
+    
 }

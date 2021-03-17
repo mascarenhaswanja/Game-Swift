@@ -8,51 +8,45 @@
 
 import Foundation
 
-//@TODO Implement inheritence ? Hints
-// Protocol and Extension-OK
-
-import Foundation
-
 var player = Player()
 player.welcomeGame()
 
 let game = Game(player: player)
 game.playGame()
 
-/*  This project is unisng XCode 9.4 (some funcionalities are not available)
+/*  This project is using XCode 9.4 (some funcionalities are not available, Implemented by Extensions)
  
  GAME DESIGN
  Game has-a:
-    Player
-    Hint
-    BankOfQuestions
+ Player
+ Hint
+ BankOfQuestions
  
  BankOfQuestions has-a:
-    Question
+ Question
  
  Class:
-    Game
-    Player
-    Hint
+ Game
+ Player
+ Hint
  
  Structs:
-    Question
-    BankofQuestion
+ Question
+ BankofQuestion
  
  Inheritance:
-    Hint - superclass
-        Hint1 - subclass
-        Hint2 - subclass
+ Hint - superclass
+ Hint1 - subclass
+ Hint2 - subclass
  
  Protocol:
-    Printable - print special situations with Hint
+ Printable - print special situations with Hint
  
  Extensions:
-    Int -  random from arc4random
-    Bool - toggle self = !self
+ Int -  random from arc4random
+ Bool - toggle self = !self
  
  Enum:
-    AnswerChoices: a,b,c,d
-    WinningMoney per question and round
+ AnswerChoices: a,b,c,d
+ WinningMoney per question and round
  */
- 

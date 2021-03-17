@@ -35,14 +35,9 @@ class Player {
                 continue
             }
             invalidName.toggle()
-            //invalidName = false
             result = unwrapped
         }
         self.name = result
         print("Hello, \(result.uppercased())")
-    }
-    // @TODO use enum
-    func moneyGame( ) {
-        
     }
 }
