@@ -7,6 +7,7 @@
 //
 import Foundation
 
+// Use Protocol Printable
 class Hint : Printable {
     var usedHint = false
     

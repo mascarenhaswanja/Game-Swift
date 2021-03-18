@@ -46,7 +46,7 @@ class Hint2: Hint {
     }
 
     public override func printOptions() {
-        print("(2): \(description)")
+        print("B - \(description)")
         //super.printOptions()
     }
 }

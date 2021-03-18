@@ -8,6 +8,7 @@
 
 import Foundation
 
+// CaseIerable protocol doesn't work in XCode 9.4
 enum AnswerChoices: Int {
     case a = 0
     case b = 1

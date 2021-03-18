@@ -51,8 +51,21 @@ struct BankOfQuestions {
             let select = bankOfQuestions.filter({$0.level == l})
             for _ in 1...3 {    // 3 questions in each level
 
-                let ind = Int.random(n: select.count)
-                randomQuestions.append(select[ind])
+//                let ind = Int.random(n: select.count)
+//                randomQuestions.append(select[ind])
+                // Generate distinct questions
+                var questionExist: Bool = false
+                //var ind = Int.random(in: 0..<select.count-1)
+                var ind = Int.random(n: select.count)
+                while !questionExist  {
+                    if !randomQuestions.contains(where: { $0.question == select[ind].question } )  {
+                        randomQuestions.append(select[ind])
+                        questionExist.toggle()
+                    } else {
+                        //ind = Int.random(in: 0..<select.count-1)
+                        ind = Int.random(n: select.count)
+                    }
+                }
             }
         }
         return randomQuestions

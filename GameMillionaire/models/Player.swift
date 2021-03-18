@@ -7,12 +7,10 @@
 //
 
 import Foundation
-
 class Player {
     var name: String?
     
-    
-    func welcomeGame() {
+    func  welcomeGame() {
         print("******************************************************************")
         print("****                        WELCOME TO PLAY                   ****")
         print("****                 WHO WANTS TO BE A MILIONAIRE             ****")
@@ -34,9 +32,10 @@ class Player {
                 continue
             }
             invalidName.toggle()
+            //invalidName = false
             result = unwrapped
         }
-        self.name = result
-        print("Hello, \(result.uppercased())")
+        self.name = result.uppercased()
+        print("Hello, \(name ?? " ") ")
     }
 }

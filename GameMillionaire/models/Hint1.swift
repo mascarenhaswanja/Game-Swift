@@ -15,6 +15,7 @@ class Hint1: Hint {
         super.init()
     }
 
+     
     public override func responseHint(question: Question) -> [String] {
         var randomAnswer: Int
         let optionCorrect = question.correctAnswer.rawValue
@@ -52,7 +53,7 @@ class Hint1: Hint {
     }
     
     public override func printOptions() {
-        print("(1): \(description)")
+        print("A - \(description)")
         // super.printOptions()
     }
 }

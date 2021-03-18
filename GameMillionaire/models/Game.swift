@@ -6,7 +6,6 @@
 //  Copyright © 2021 Wanja. All rights reserved.
 //
 import Foundation
-
 class Game {
     var player: Player
     let questions: BankOfQuestions = BankOfQuestions()
@@ -26,7 +25,7 @@ class Game {
             }
         }
     }
-
+    
     init (player: Player) {
         self.player = player
     }
@@ -47,8 +46,8 @@ class Game {
         var option: String
         
         repeat {
-            print("\nYou're in ROUND: \(round) \n QUESTION: \(currentQuestion) REMAIN QUESTIONS: \(9 - currentQuestion)")
-            print(" TOTAL EARNED UNTIL NOW $:\(totalWin)")
+            print("\nYou're in ROUND: \(round) \n Question: \(currentQuestion) Remain Questions: \(9 - currentQuestion)")
+            print(" Total Until Now $:\(totalWin)")
             
             // Select and Show Question
             let questionSelected = selectedQuestions[currentQuestion-1]
@@ -58,9 +57,8 @@ class Game {
             if round <= 2 && (!h1.usedHint || !h2.usedHint)  {
                 let want:Bool = wantHint()
                 if want {
-                    let hintNumber = chooseHint(h:hints)
-                    
-                    if hintNumber == 1 {
+                    let hintSelected = chooseHint(h:hints)
+                    if hintSelected.uppercased() == "A" {
                         let result50 = h1.responseHint(question: questionSelected)
                         showHint(number: currentQuestion, selected: questionSelected, op: result50)
                         var confirm = false
@@ -74,7 +72,7 @@ class Game {
                     } else {
                         let audience = h2.responseHint(question: questionSelected)
                         option = audience[0]
-                        print("Audience Choose Option \(option)")
+                        print("Audience Choose Option \(option.uppercased())")
                         h2.usedHint = true
                     }
                 } else {  //  NO HINT
@@ -100,11 +98,15 @@ class Game {
             resultWin = looseOrWin(option: option, selected: questionSelected)
             
             if resultWin {
-                switch round {
-                case 1:  totalWin = WinningRound.round1.rawValue
-                case 2:  totalWin = WinningRound.round2.rawValue
-                case 3:  totalWin = WinningRound.round3.rawValue
-                default: totalWin = 0
+                switch currentQuestion {
+                case 1,2: totalWin = WinningRound.round1.rawValue
+                case 3:   totalWin = WinningQuestion.question3.rawValue
+                case 4,5: totalWin = WinningRound.round2.rawValue
+                case 6:   totalWin = WinningQuestion.question6.rawValue
+                case 7:   totalWin = WinningQuestion.question7.rawValue
+                case 8:   totalWin = WinningQuestion.question8.rawValue
+                case 9:   totalWin = WinningQuestion.question9.rawValue
+                default:  totalWin = 0
                 }
                 
                 if (currentQuestion == 3 || currentQuestion == 6) || (round == 3 && currentQuestion < 9) {
@@ -112,20 +114,30 @@ class Game {
                 }
                 currentQuestion += 1
             }
+            else {
+                switch round {
+                case 1:  totalWin = WinningRound.round1.rawValue
+                case 2:  totalWin = WinningRound.round2.rawValue
+                case 3:  totalWin = WinningRound.round3.rawValue
+                default: totalWin = 0
+                }
+            }
         } while resultWin && defContinue && currentQuestion <= 9
         
         if resultWin {
             if currentQuestion > 9 {
-                totalWin = WinningQuestion.question9.rawValue
-                print("\n\nCONGRATULATIONS!!! You're a millionaire. You earned $ \(totalWin)")
+                print("\n\n CONGRATULATIONS!!! \(player.name ?? "") you're a millionaire. You won $ \(totalWin)")
             } else {
-                print("\n\nYou earned $ \(totalWin)")
+                print("\n\n \(player.name ?? "") you won $ \(totalWin)")
             }
+        }  else {
+            print("\n\n \(player.name ?? "") you won $ \(totalWin)")
         }
     }
-
+    
     func showQuestion(number: Int, selected: Question, op:[String])  {
         print("\nQuestion \(number) - \(selected.question)")
+        // CaseIerable protocol doesn't work in XCode 9.4
         let letters = ["a", "b", "c", "d"]
         for i in 0...3 {
             print("\(letters[i].uppercased()) - \(selected.options[i])")
@@ -138,9 +150,10 @@ class Game {
         sortOp.sort()
         let letters = ["a", "b", "c", "d"]
         
-//      Version 9.4 - firstIndex(where:  )  doesn't work
-//          let index1 = letters.firstIndex(where: sortOp[0].uppercased()) ?? 0
-//          let index2 = letters.firstIndex(where: sortOp[1].uppercased()) ?? 0
+        // Version 9.4 - firstIndex(where:  )  - doesn't work
+        // WOM - use where
+        //  let index1 = letters.firstIndex(where: sortOp[0].uppercased()) ?? 0
+        //  let index2 = letters.firstIndex(where: sortOp[1].uppercased()) ?? 0
         
         let index1 = letters.index(of: sortOp[0]) ?? letters.endIndex
         let index2 = letters.index(of: sortOp[1]) ?? letters.endIndex
@@ -242,7 +255,6 @@ class Game {
             } else if conf.uppercased() == "N" {
                 invalidOption = false
                 print("You'll change your option")
-                // result = chooseOption()
             } else {
                 invalidOption = true
                 print("Invalid, try again")
@@ -258,8 +270,7 @@ class Game {
             print("\nYour answer is correct.")
             return true
         } else {
-            print("\nCORRECT ANSWER IS \(selected.options[index])")
-            print("Wrong Answer. YOU'LL WIN $ \(totalWin)")
+            print("\nWrong Answer, CORRECT Answer is:   \(correct.choice().uppercased()) - \(selected.options[index])")
             return false
         }
     }
@@ -316,28 +327,28 @@ class Game {
         return cont
     }
     
-    func chooseHint(h: [Hint]) -> Int {
-        var optionHint: Int = 0
+    func chooseHint(h: [Hint]) -> String {
+        var optionHint: String = "a"
         var input: String?
         var invalidOption: Bool = true
         print("\nWhat is your Hint?")
-        //for item in hints   {
         for item in hints {
             if !item.usedHint {
                 item.printOptions()
             }
         }
+        print("HINT: ", terminator: "")
         while (invalidOption) {
             input = readLine()
             guard let op = input else {
                 print ("You didn't provide option.")
                 continue
             }
-            optionHint = Int(op)!
-            if optionHint == 1  && !(hints[0].usedHint) {
+            optionHint = op
+            if optionHint.uppercased() == "A"  && !(hints[0].usedHint) {
                 invalidOption.toggle()
             } else {
-                if optionHint == 2  && !(hints[1].usedHint) {
+                if  optionHint.uppercased() == "B"   && !(hints[1].usedHint) {
                     invalidOption.toggle()
                     //invalidOption = false
                 } else {
